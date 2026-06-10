@@ -6,7 +6,9 @@ import CreatePost from "../screens/CreatePost/CreatePost";
 
 const Tab = createBottomTabNavigator();
 
-return (
+
+function NavigationTab(){
+    return (
     <NavigationContainer>
         <Tab.Navigator>
             <Tab.Screen name ="Home" component={Home}/>
@@ -15,3 +17,6 @@ return (
         </Tab.Navigator>
     </NavigationContainer>
 )
+}
+
+export default NavigationTab;

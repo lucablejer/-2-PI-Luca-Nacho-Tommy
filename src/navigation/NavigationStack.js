@@ -5,11 +5,15 @@ import Register from "../screens/Register/Register"
 
 const Stack = createNaviteStackNavigator();
 
-return (
+function NavigationStack(){
+    return (
     <NavigationContainer>
-        <StackNavigator>
+        <Stack.Navigator>
             <Stack.Screen name ="Login" component={Login}/>
             <Stack.Screen name ="Register" component={Register}/>
-        </StackNavigator>
+        </Stack.Navigator>
     </NavigationContainer>
 )
+}
+
+export default NavigationStack;
