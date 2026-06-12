@@ -44,3 +44,5 @@ function Profile(){
         </View>
     )
 }
+
+export default Profile;

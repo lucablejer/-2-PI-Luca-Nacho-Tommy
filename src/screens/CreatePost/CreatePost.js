@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
-import { db, auth } from '../../firebase/config';
+import { db, auth } from '../../Firebase/config';
 
 function CreatePost(props){
     const [descripcion, setDescripcion] = useState("");

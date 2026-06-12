@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Text, View, Pressable, TextInput, Pressable, StyleSheet} from 'react-native';
 import { auth } from "../../Firebase/config";
 
-function Login(){
+function Login(props){
     const[email, setEmail]=useState("");
     const[password, setPassword]=useState("");
     const[error, setError]=useState(null);
@@ -10,7 +10,7 @@ function Login(){
     function onSubmit(){
         auth.signInwithEmailAndPassword(email, password)
         .then(()=> {
-            props.navigation.navigate("Home")
+            props.navigation.navigate("HomeTab")
         })
         .catch(error => {
             setError(error)
@@ -20,9 +20,9 @@ function Login(){
     useEffect(()=> {
         auth.onAuthStateChanged(user =>{
             if(user){
-                props.navigation.navigate("Home")
+                props.navigation.navigate("HomeTab")
             } else {
-                props.navigation.navigate("Login")
+                props.navigation.navigate("LoginStack")
             }
             console.log(user)
         })
