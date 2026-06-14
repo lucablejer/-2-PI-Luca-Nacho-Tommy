@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import { Text, View, Pressable, TextInput, StyleSheet, FlatList} from 'react-native';
+import { Text, View, Pressable, TextInput, StyleSheet} from 'react-native';
 import { auth, db } from "../../firebase/config";
 import { FlatList } from 'react-native-web';
 
-function Profile(){
+function Profile(props){
     const[posteos, setPosteos]=useState([]);
     const currentUser = auth.currentUser
 
@@ -35,7 +35,7 @@ function Profile(){
             <FlatList
             data={posteos}
             keyExtractor={(item) => item.id}
-            renderItem={({item}) =>}
+            renderItem={({item}) => <Posteos item={item} navigation={props.navigation}/>}
             />
 
             <Pressable onPress={logout}>

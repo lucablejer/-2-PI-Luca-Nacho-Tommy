@@ -10,12 +10,12 @@ const Tab = createBottomTabNavigator();
 function NavigationTab(){
     return (
     <NavigationContainer>
-        <Tab.Navigator>
-            <Tab.Screen name ="Home" component={Home}/>
-            <Tab.Screen name ="Profile" component={Profile}/>
-            <Tab.Screen name ="CreatePost" component={CreatePost}/>
+        <Tab.Navigator screenOptions={{tabBarShowLabel: false}}>
+            <Tab.Screen name ="Home" component={Home} options={{tabBarIcon: () => <fontAwesome name="home" size={24} color="black" />}}/>
+            <Tab.Screen name ="Profile" component={Profile} options={{tabBarIcon: () => <fontAwesome name="person" size={24} color="black" />}}/>
+            <Tab.Screen name ="CreatePost" component={CreatePost} options={{tabBarIcon: () => <fontAwesome name="plus" size={24} color="black" />}}/>
         </Tab.Navigator>
-    </NavigationContainer>
+    </NavigationContainer> 
 )
 }
 

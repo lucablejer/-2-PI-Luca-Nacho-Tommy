@@ -42,21 +42,7 @@ function Home(props){
                 <FlatList
                     data={posteos}
                     keyExtractor={item => item.id}
-                    renderItem={({item}) =>
-                        <View style={styles.card}>
-                            <Text style={styles.owner}>{item.data.owner}</Text>
-                            <Text style={styles.description}>{item.data.description}</Text>
-                            <Text style={styles.likes}>Likes: {item.data.likes.length}</Text>
-
-                            <Pressable onPress={()=> likear(item.id, item.data.likes)}>
-                                <Text>Me gusta</Text>
-                            </Pressable>
-
-                            <Pressable style={styles.button} onPress={()=> props.navigation.navigate("ComentarPosteo", {id: item.id})}>
-                                <Text style={styles.buttonText}>Comentar</Text>
-                            </Pressable>
-                        </View>
-                    }
+                    renderItem={({item}) => <Posteos item={item} navigation={props.navigation}/>}
                 />
             )}
         </View>
