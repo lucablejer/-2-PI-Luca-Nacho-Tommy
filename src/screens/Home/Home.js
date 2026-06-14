@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { View, Text, FlatList, Pressable, StyleSheet, ActivityIndicator } from 'react-native';
-import { db, auth } from '../../Firebase/config';
+import { db, auth } from '../../firebase/config';
 import firebase from 'firebase';
 
 function Home(props){

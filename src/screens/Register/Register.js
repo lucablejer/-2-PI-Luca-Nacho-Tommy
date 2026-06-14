@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, Pressable, TextInput } from "react-native";
-import { auth, db } from "../Firebase/Config";
+import { auth, db } from "../../firebase/config";
 
 function Register(props){
     const [mail, setEmail] = useState ([])

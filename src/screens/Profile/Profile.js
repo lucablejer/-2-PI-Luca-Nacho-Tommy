@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Text, View, Pressable, TextInput, StyleSheet, FlatList} from 'react-native';
-import { auth, db } from "../../Firebase/config";
+import { auth, db } from "../../firebase/config";
 import { FlatList } from 'react-native-web';
 
 function Profile(){
