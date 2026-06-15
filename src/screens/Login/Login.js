@@ -46,14 +46,14 @@ function Login(props){
             onChangeText={text => setPassword(text)}
             value={password}/>
 
-            {error ? <Text>{error}</Text> : null}
+            {error ? <Text styles = {styles.error}>{error}</Text> : null}
 
-            <Pressable style={styles.button} onPress={()=> onSubmit()}>
-                <Text>Login</Text>
+            <Pressable style = {styles.button} onPress={()=> onSubmit()}>
+                <Text style = {styles.buttonText}>Login</Text>
             </Pressable>
 
-            <Pressable style={styles.button} onPress={()=> props.navigation.navigate("Register")}>
-                <Text>No tenes cuenta? Registrate</Text>
+            <Pressable style = {styles.button} onPress={()=> props.navigation.navigate("Register")}>
+                <Text style = {styles.buttonText}>No tenes cuenta? Registrate</Text>
             </Pressable>
         </View>
     )
@@ -90,6 +90,10 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "500",
     },
+    error:{
+        color:"red",
+        marginBottom: 16,
+    }
 })
 
 export default Login;

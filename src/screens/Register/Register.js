@@ -31,32 +31,32 @@ function Register(props){
     return(
         <View style={styles.container}>
 
-            <Text>Register</Text>
+            <Text style = {styles.titulo}>Register</Text>
 
-            <TextInput style={styles.title}
+            <TextInput style={styles.input}
             keyboardType="email-address"
             placeholder="email"
             onChangeText={text => setEmail(text)}
             value={mail}/>
 
-            <TextInput style={styles.title}
+            <TextInput style={styles.input}
             keyboardType="default"
             placeholder="password"
             secureTextEntry={true}
             onChangeText={text => setPassword(text)}
             value={password}/>
 
-            <TextInput style={styles.title}
+            <TextInput style={styles.input}
             keyboardType="default"
             placeholder="Username"
             secureTextEntry={false}
             onChangeText={text => setUserName(text)}
             value={userName}/>
 
-            {error ? <Text>{error}</Text> : null}
+            {error ? <Text style = {styles.error}>{error}</Text> : null}
 
-            <Pressable onPress={()=> onSubmit()}>
-                <Text>Register</Text>
+            <Pressable style = {styles.button} onPress={()=> onSubmit()}>
+                <Text style = {styles.buttonText}>Register</Text>
             </Pressable>
 
             <Pressable onPress={() => props.navegation.navigate("Login")}>
@@ -66,5 +66,44 @@ function Register(props){
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        justifyContent: "center",
+        padding: 24,
+    },
+    titulo:{
+        fontSize: 28,
+        fontWeight: "500",
+        marginBottom: 24,
+    },
+    input:{
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 8,
+        padding: 12,
+        marginBottom: 16,
+        fontSize: 16,
+    },
+    error:{
+        color:"red",
+        marginBottom: 16,
+    },
+    button:{
+        backgroundColor:"#185FA5",
+        padding: 14,
+        borderRadius: 8,
+        alignItems:"center",
+        marginBottom: 16,
+    },
+    buttonText:{
+        color:"white",
+        fontSize: 16,
+        fontWeight:"500",
+    },
+})
+
+
 
 export default Register; 
