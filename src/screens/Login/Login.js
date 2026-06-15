@@ -5,15 +5,17 @@ import { auth } from "../../firebase/config";
 function Login(props){
     const[email, setEmail]=useState("");
     const[password, setPassword]=useState("");
-    const[error, setError]=useState(null);
+
+    
+    const[error, setError]=useState("") ;
 
     function onSubmit(){
-        auth.signInwithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, password)
         .then(()=> {
             props.navigation.navigate("HomeTab")
         })
         .catch(error => {
-            setError(error)
+            setError(error.message)
         })
     }
 
@@ -21,9 +23,7 @@ function Login(props){
         auth.onAuthStateChanged(user =>{
             if(user){
                 props.navigation.navigate("HomeTab")
-            } else {
-                props.navigation.navigate("LoginStack")
-            }
+            } 
             console.log(user)
         })
     }, [])

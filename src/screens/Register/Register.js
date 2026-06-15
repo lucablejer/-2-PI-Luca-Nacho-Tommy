@@ -3,10 +3,10 @@ import { Text, View, Pressable, TextInput } from "react-native";
 import { auth, db } from "../../firebase/config";
 
 function Register(props){
-    const [mail, setEmail] = useState ([])
-    const [password, setPassword] = useState ([])
-    const [userName, setUserName] = useState ([])
-     const[error, setError]=useState(null);
+    const [mail, setEmail] = useState ("") 
+    const [password, setPassword] = useState ("")
+    const [userName, setUserName] = useState ("")
+     const[error, setError]=useState("");
 
 
     function onSubmit(){
@@ -18,12 +18,12 @@ function Register(props){
                 createdAt: Date.now(),
             })
             .then(res => {
-                props.navegation.navigate("Login")
+                props.navigation.navigate("Login")
             })
-            setRegister(true);
+            //setRegister(true);
         })
         .catch( error => {
-            setError("")
+            setError(error.message)
             console.log(error)
         })
     }
@@ -59,7 +59,7 @@ function Register(props){
                 <Text style = {styles.buttonText}>Register</Text>
             </Pressable>
 
-            <Pressable onPress={() => props.navegation.navigate("Login")}>
+            <Pressable onPress={() => props.navigation.navigate("Login")}>
                 <Text>Already Signed In?</Text>
             </Pressable>
 
