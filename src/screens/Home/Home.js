@@ -3,6 +3,9 @@ import { View, Text, FlatList, Pressable, StyleSheet, ActivityIndicator } from '
 import { db, auth } from '../../firebase/config';
 import firebase from 'firebase';
 
+import Posteos from '../../Components/Posteos/Posteos';
+
+
 function Home(props){
     const[posteos, setPosteos] = useState([]);
     const[cargando, setCargando] = useState(true);
