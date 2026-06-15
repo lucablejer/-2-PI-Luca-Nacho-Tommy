@@ -6,7 +6,7 @@ function Login(props){
     const[email, setEmail]=useState("");
     const[password, setPassword]=useState("");
 
-    
+
     const[error, setError]=useState("") ;
 
     function onSubmit(){
@@ -15,7 +15,7 @@ function Login(props){
             props.navigation.navigate("HomeTab")
         })
         .catch(error => {
-            setError(error.message)
+            setError("El email y/o la contrasena son incorrectos (" + error.message + ")")
         })
     }
 
@@ -31,7 +31,7 @@ function Login(props){
     return(
         <View style={styles.container}>
 
-            <Text style={styles.titulo}>Login</Text>
+            <Text style={styles.titulo}>Iniciar Sesion</Text>
 
             <TextInput style={styles.input}
             keyboardType="email-address"
@@ -41,7 +41,7 @@ function Login(props){
 
             <TextInput style={styles.input}
             keyboardType="default"
-            placeholder="password"
+            placeholder="contrasena"
             secureTextEntry={true}
             onChangeText={text => setPassword(text)}
             value={password}/>
@@ -49,7 +49,7 @@ function Login(props){
             {error ? <Text styles = {styles.error}>{error}</Text> : null}
 
             <Pressable style = {styles.button} onPress={()=> onSubmit()}>
-                <Text style = {styles.buttonText}>Login</Text>
+                <Text style = {styles.buttonText}>iniciar sesion</Text>
             </Pressable>
 
             <Pressable style = {styles.button} onPress={()=> props.navigation.navigate("Register")}>

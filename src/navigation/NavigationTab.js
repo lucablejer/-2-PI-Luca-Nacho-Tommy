@@ -20,7 +20,7 @@ function HomeStackScreen(){
 
 function NavigationTab(){
     return(
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{tabBarShowLabel: false}}>
             <Tab.Screen name="HomeStack" component={HomeStackScreen} options={{headerShown: false, tabBarIcon: () => <FontAwesome name="home" size={24} color="black"/>}}/>
             <Tab.Screen name="CreatePost" component={CreatePost} options={{tabBarIcon: () => <FontAwesome name="plus" size={24} color="black"/>}}/>
             <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: () => <FontAwesome name="user" size={24} color="black"/>}}/>

@@ -26,8 +26,8 @@ function Posteos(props){
             <Text style={styles.description}>{item.data.description}</Text>
             <Text style={styles.likes}>Likes: {likes.length}</Text>
 
-            <Pressable onPress={()=> likear()}>
-                <Text>Me gusta</Text>
+            <Pressable style={styles.button} onPress={()=> likear()}>
+                <Text style={styles.buttonText}>Me gusta</Text>
             </Pressable>
 
             <Pressable style={styles.button} onPress={()=> props.navigation.navigate("CommentPost", {id: item.id})}>
