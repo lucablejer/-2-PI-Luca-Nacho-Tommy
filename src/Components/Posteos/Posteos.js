@@ -4,9 +4,9 @@ import {db, auth} from '../../firebase/config';
 import firebase from 'firebase';
 
 function Posteos(props){
-    var item = props.item;
-    var likes = item.data.likes;
-    var email = auth.currentUser.email;
+    const item = props.item;
+    const likes = item.data.likes;
+    const email = auth.currentUser.email;
 
     function likear(){
         if(likes.includes(email)){
