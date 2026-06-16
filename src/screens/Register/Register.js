@@ -20,7 +20,7 @@ function Register(props){
             .then(res => {
                 props.navigation.navigate("Login")
             })
-            //setRegister(true);
+            setRegister(true);
         })
         .catch( error => {
             setError("El email y/o la contrasena son invalidos (" + error.message + ")")
